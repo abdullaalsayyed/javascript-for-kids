@@ -1,9 +1,31 @@
 <!doctype html>
 <html>
-  <head>
-    <title>JavaScript for Kids</title>
-  </head>
-  <body>
-    <script src="word-guess.js"></script>
-  </body>
+<head>
+  <title>JavaScript for Kids</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="player1" class="container">
+  <label for="question">Player 1, Enter your secret word.</label>
+  <br/>
+  <input id="question" placeholder="Your Secret word.." type="text" required />
+  <br/>
+  <button onclick="document.getElementById('question').value && run()">Play!</button>
+</section>
+
+<section id="player2" style="display: none;" class="container">
+  <label for="answer">Player 2, Guess the secret word!</label>
+  <br/>
+  <a id="guesses"></a>
+  <br/>
+  <a id="notifications"></a>
+  <br/>
+  <input id="answer" placeholder="Your Guess.." maxlength="1" onchange="" type="text" required/>
+  <br/>
+  <button onclick="document.getElementById('answer').value && guess(document.getElementById('answer').value)">Play!</button>
+</section>
+
+<script src="word-guess.js"></script>
+</body>
 </html>
